@@ -16,8 +16,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/square', validNumber(), (req, res) => {
-  const number = req.number;
-  res.status(200).json({ number: number });
+  const number = req.num;
+  console.log(req.num);
+  res.status(200).json({ num: number });
 });
 
 app.use(errorHandler);

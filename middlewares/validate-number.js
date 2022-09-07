@@ -2,12 +2,14 @@
 
 module.exports = () => {
   return (req, res, next) => {
-    if(typeof NaN === 'number') {
-      req.number = (req.query.number)*(req.query.number)
-      next();
+    if(isNaN(-req.query.num )) {
+      next(`${req.query.num} is not a number`);
     } else {
-      next(`${number} is not a number`);
+      req.num = (+req.query.num)*(+req.query.num)
+      next();
       
+     
     }
   }
 }
+// typeof +req.query.num == 'Number'
